@@ -1,0 +1,28 @@
+{% for task in tasks %}
+<div class="col-md-4">
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">{{ task.title }}</h5>
+            <p class="card-text">{{ task.description }}</p>
+            <div class="d-flex justify-content-between">
+                <form  class="complete-form">
+                    {% csrf_token %}
+                    <button class="btn btn-success complete-task" data-task-id="{{ task.id }}">
+                        <i class="fas fa-check"></i> Concluir
+                    </button>
+                </form>
+                <form class="delete-form">
+                    {% csrf_token %}
+                    <button class="btn btn-danger delete-task" data-task-id="{{ task.id }}" type="submit">
+                        <i class="fas fa-trash"></i> Excluir
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% empty %}
+<div class="col">
+    <p>Não há tarefas por aqui</p>
+</div>
+{% endfor %}

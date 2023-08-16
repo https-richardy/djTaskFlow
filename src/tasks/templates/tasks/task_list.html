@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'tasks/css/styles.css' %}">
+{% endblock %}
+
+{% block title %}Dashboard de {{ user }}{% endblock %}
+
+{% block content %}
+    <div class="container vh-100" style="margin-top: 50px;">
+        <a class="btn btn-primary" href="{% url 'tasks:create' %}" style="margin-bottom: 25px;">
+            <i class="fas fa-plus"></i> Criar Nova Tarefa
+        </a>
+        <div class="row">
+            {% include 'tasks/tasks.html' %}
+        </div>
+    </div>
+    <script src="{% static 'tasks/js/deleteTask.js' %}"></script>
+    <script src="{% static 'tasks/js/completeTask.js' %}"></script>
+{% endblock %}

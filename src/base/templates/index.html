@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Início{% endblock %}
+
+{% block content %}
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="display-4">Bem-vindo ao TaskFlow</h1>
+        <p class="lead">Uma maneira simples de gerenciar suas tarefas diárias.</p>
+    </div>
+</section>
+
+<section class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>O que é o TaskFlow?</h2>
+            <p>O TaskFlow é um aplicativo de gerenciamento de tarefas projetado para ajudar você a manter o controle de suas atividades diárias.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="rounded-right p-4 bg-light">
+                <h2>Comece agora</h2>
+                <p>Descubra como o TaskFlow pode revolucionar a maneira como você gerencia suas tarefas. Cadastre-se gratuitamente e aumente sua produtividade.</p>
+                <a href="{% url 'accounts:signup' %}" class="btn btn-primary btn-lg">Cadastrar-se</a>
+                <a href="{% url 'tasks:list' %}" class="btn btn-secondary btn-lg">Entrar</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="rounded-right p-4 bg-light mt-4" style="margin-bottom: 20px;">
+            <h2>Desenvolvido por</h2>
+            <p>Olá, eu sou Richard, o desenvolvedor por trás do TaskFlow. Eu criei este aplicativo para demonstrar minhas habilidades em desenvolvimento web com Django e para ajudar você a ter um melhor controle sobre suas tarefas diárias.</p>
+            <div class="social-icons mt-3">
+                <a href="https://github.com/richardy" target="_blank" style="margin-right: 10px;" class="text-dark mr-3">
+                    <i class="fab fa-github fa-lg"></i> https-richardy
+                </a>
+                <a href="mailto:code.richardy@gmail.com" class="text-dark">
+                    <i class="fas fa-envelope fa-lg"></i> code.richardy@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
